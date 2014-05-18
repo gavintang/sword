@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gtang</groupId>
+        <artifactId>longclaw</artifactId>
+        <version>1.000</version>
+    </parent>
+    
+    <artifactId>longclaw-core</artifactId>
+    <version>00.001.01-SNAPSHOT</version>
+    <name>Longclaw Core</name>
+    <packaging>jar</packaging>
+    
+    <properties></properties>
+    
+    <dependencies>
+        <dependency>
+            <groupId>com.gtang</groupId>
+            <artifactId>longclaw-test-dps</artifactId>
+            <version>1.000</version>
+            <scope>test</scope>
+            <type>pom</type>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+</project>
