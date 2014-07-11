@@ -16,17 +16,11 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface URLStringValidation {
- 
-    int min();
-    int max();
-    boolean nullable();
-    Type type();
+public @interface IntegerValidation {
     
-    static enum Type {
-        ALPHA,
-        ALPHANUMERIC,
-        NUMBER
-    }
+    boolean hasRange() default false;
+    int min() default 0;
+    int max() default 0;
+    boolean nullable() default true;
     
 }

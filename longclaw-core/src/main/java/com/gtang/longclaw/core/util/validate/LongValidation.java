@@ -16,15 +16,11 @@ import java.lang.annotation.Target;
  */
 @Retention(RetentionPolicy.RUNTIME)
 @Target(ElementType.METHOD)
-public @interface StringValidation {
+public @interface LongValidation {
  
-    int min() default 0;
-    int max() default 0;
+    boolean hasRange() default false;
+    long min() default 0l;
+    long max() default 0l;
     boolean nullable() default true;
-    String charset() default "";
-    
-    final static String ALPHA = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
-    final static String NUMBERIC = "01234567890.,";
-    final static String ALPHANUMBERIC = ALPHA + NUMBERIC;
     
 }

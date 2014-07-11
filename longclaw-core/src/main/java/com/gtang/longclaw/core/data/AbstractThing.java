@@ -1,12 +1,17 @@
 package com.gtang.longclaw.core.data;
 
+import com.gtang.longclaw.core.util.validate.Validateable;
+import com.gtang.longclaw.core.util.validate.ValidationException;
+import com.gtang.longclaw.core.util.validate.ValidationUtil;
 import java.io.Serializable;
 import org.apache.commons.lang3.ObjectUtils;
 import org.apache.commons.lang3.builder.HashCodeBuilder;
 
 abstract public class AbstractThing
-        implements Serializable, Identifiable {
+        implements Serializable, Validateable, Identifiable {
 
+    private long id;
+    
     public AbstractThing() {}
 
     public AbstractThing(AbstractThing other) {
@@ -18,30 +23,19 @@ abstract public class AbstractThing
     }
 
     @Override
-    public abstract void setId(final long id);
+    public void setId(long id) {
+        this.id = id;
+    }
 
     @Override
-    public abstract long getId();
+    public long getId() {
+        return id;
+    }
 
-    /**
-     * @param thing
-     * @return
-     */
     public boolean isSame(final AbstractThing thing) {
         return thing != null && thing.getId() == getId();
     }
 
-    /**
-     * A master toString method used to make it easier to implement a standard
-     * format toString method in child classes. Delegates adding the local
-     * fields to each containing subclass. </p>
-     *
-     * Intended to be implemented using the following design pattern: </p>
-     *
-     * </pre>
-     *
-     * @see Object#toString
-     */
     @Override
     public final String toString() {
         final StringBuffer sb = new StringBuffer();
@@ -135,6 +129,15 @@ abstract public class AbstractThing
 
     public boolean isValid() {
         return valid;
+    }
+
+    public void setValid(boolean valid) {
+        this.valid = valid;
+    }
+    
+    @Override
+    public void validate() throws ValidationException {
+        ValidationUtil.validate(this);
     }
 
 }
