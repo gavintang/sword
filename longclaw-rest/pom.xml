@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <parent>
+        <groupId>com.gtang</groupId>
+        <artifactId>longclaw</artifactId>
+        <version>1.000</version>
+        <relativePath>../pom.xml</relativePath>
+    </parent>
+
+    <artifactId>longclaw-rest</artifactId>
+    <version>00.001.01-SNAPSHOT</version>
+    <name>Longclaw Rest</name>
+    <packaging>war</packaging>
+
+    <properties>
+        <webXml.file>src${sp.f}main${sp.f}webapp${sp.f}WEB-INF${sp.f}web.xml</webXml.file>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-web-api</artifactId>
+            <version>6.0</version>
+            <scope>provided</scope>
+        </dependency>
+        
+        <dependency>
+            <groupId>com.gtang</groupId>
+            <artifactId>longclaw-core</artifactId>
+            <version>00.001.01-SNAPSHOT</version>
+        </dependency>
+        
+        <!-- Spring 3 dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+        </dependency>
+        
+    </dependencies>
+
+</project>
